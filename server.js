@@ -27,6 +27,6 @@ app.get('/profile/:id', profile.handleProfileGet(db));
 app.put('/image', (res, req) => {image.handleImage(res, req, db)}); // Alternative Syntax
 app.post('/imageurl', image.handleApiCall); // Alternative Syntax
 
-app.listen(3001, () => {
-    console.log('Server running.')
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server running on ${process.env.PORT}.`)
 });
