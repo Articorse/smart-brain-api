@@ -5,10 +5,8 @@ const bcrypt = require('bcrypt-nodejs');
 const db = require('knex')({
     client: 'pg',
     connection: {
-      host : 'postgresql-regular-93426',
-      user : 'postgres',
-      password : 'test',
-      database : 'smart-brain'
+      host : 'process.env.DATABASE_URL',
+      ssl: true
     }
 });
 
